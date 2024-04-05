@@ -1,0 +1,881 @@
+
+:root{
+    --colorPrimario:#005591;
+    --colorSecundario:rgb(28, 127, 226);
+    --gris:#dce6eb;
+    --grisclaro:#F1F5F7;
+    --letra-principal: "Poppins", sans-serif;
+    --letracuerpo:"Ubuntu", sans-serif;
+    --blanco:#FFFF;
+    --negro:#000;
+     
+}
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto asegura que el padding no afecte el ancho total */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de la ventana del navegador */
+}
+
+.contenido-principal {
+    flex: 1;
+    /* Asegúrate de que cualquier otro contenido aquí esté configurado correctamente */
+}
+
+
+/* Globales */
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    width: min(90%, 120rem);
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4{
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+h1{
+    font-size: 4.8rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3.2rem;
+}
+h4{
+    font-size: 2.8rem;
+}
+img{
+    max-width: 100%;
+}
+/* Utilidades */
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+.centrar-texto{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.contenedor-1{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 2rem;
+    height: 2.8rem;
+    align-items: center; /* Centra los elementos verticalmente */
+    
+}
+.fondo-1{
+    background-color: var(--gris);
+    width: 100%;
+    height: 2.8rem;
+}
+.texto-iniciar{
+    font-family: var(--letra-principal);
+    color: var(--blanco);
+}
+.animacion {
+    position: relative; /* Posicionamiento relativo para el pseudoelemento */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: var(--colorPrimario); /* Color del texto */
+    transition: color 0.3s; /* Transición suave del color del texto */
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  /* Pseudoelemento para la línea debajo del texto */
+  .animacion::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Ancho inicial de la línea */
+    height: 2px; /* Altura de la línea */
+    bottom: 0; /* Posición de la línea */
+    left: 30%; /* Comienza desde la mitad */
+    background-color: var(--colorPrimario); /* Color de la línea */
+    transition: width 0.3s ease, left 0.3s ease; /* Transición suave del ancho y posición de la línea */
+  }
+  
+  /* Animación de la línea al pasar el mouse */
+  .animacion:hover::after {
+    width: 100%; /* La línea se expande al 100% del ancho */
+    left: 0; /* La línea comienza desde el borde izquierdo */
+  }
+  .fondo-2{
+    background: linear-gradient(90deg, #f1f5f7, #dce6eb);
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+    height: 4rem;
+  }
+  .contenedor-2{
+    display: flex;
+    height: 4rem;
+    align-items: center; /* Centra los elementos verticalmente */
+    position: relative;
+    justify-content: space-between; /* Esto separará los elementos al principio y al final del contenedor */
+  }
+  nav a {
+    
+    font-family: var(--letra-principal);
+    font-size: 1.2rem; /* Reducido para ocupar menos espacio */
+    margin-left: 1rem; /* Reducido para tener menos espacio entre enlaces */
+    color: var(--colorPrimario);
+    margin-left: 2rem; /* Añade espacio entre los enlaces */
+    position: relative;
+    text-decoration: none; /* quita el subrayado predeterminado */
+    overflow: hidden; /* asegúrate de que el pseudo-elemento no se muestre fuera del enlace */
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: none; /* quita el subrayado predeterminado */
+    overflow: hidden; /* asegúrate de que el pseudo-elemento no se muestre fuera del enlace */
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 0.2rem; /* o el grosor del subrayado que prefieras */
+    background-color: var(--colorPrimario); 
+    transition: width 0.3s ease, left 0.3s ease; /* suaviza la transición del ancho y la posición */
+  }
+  
+  nav a:hover::after, a:focus::after {
+    width: 100%; /* el subrayado toma el ancho completo del enlace */
+    left: 0; /* alinea el subrayado desde el borde izquierdo */
+  }
+  .logo img {
+    max-height: 100%
+}
+.logo {
+    order: 2;
+    height: 100%; 
+    margin-right: 1rem
+}
+.titulo{
+    display: flex;
+    padding-top: 2.2rem;
+    padding-left: 8rem;
+}
+.texto-h1{
+    color: var(--colorPrimario);
+    font-size: 2.2rem;
+    font-family: var(--letra-principal);
+    font-weight: 400;
+}
+.banner{
+    width: 100%;
+    height: 30rem;
+}
+.img-banner{
+    height: 100%;
+    width: 100%;
+}.contenedor-principal{
+    padding-left: 10rem;
+    padding-top: 2rem;
+    padding-right: 2.5rem;
+    
+}
+.texto-h2{
+    color: #002D5A;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: 1px dotted var(--colorPrimario); 
+    font-family: var(--letra-principal);
+    font-weight: 400;
+}
+.texto-h3{
+    padding-top: 1rem;
+    color:#002D5A;
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: var(--letra-principal);
+    font-weight: 400;
+}
+.parrafo{
+    padding: .5rem;
+    font-size: 1.2rem; /* Asegúrate de que el tamaño de la fuente sea legible */
+    color: #002D5A; /* Confirma que var(--negro) sea lo suficientemente oscuro contra el fondo */
+    line-height: 1.6; /* Esto es típicamente bueno para la legibilidad */
+    font-weight: 200; /* Un peso de fuente de 400 puede ser más legible que 100 */
+    margin: 0 auto; /* Esto centra el párrafo si está dentro de un contenedor más grande */
+    text-align: justify; /* Esto justifica el texto, pero usa con precaución ya que puede crear "ríos" de espacios blancos */
+    margin: 1.6rem;
+    font-family: var(--letracuerpo);
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    
+    
+}
+
+.grid-item {
+    position: relative; /* Posición relativa para posicionar absolutamente el nombre de Acetileno */
+    padding: 1rem;
+    background-color: #01A0E1;
+    
+}
+
+.formula {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.5rem; /* Ajusta según sea necesario */
+    user-select: none;
+}
+
+.nombre {
+    color: var(--blanco);
+    display: block; /* Línea punteada debajo del texto */
+    text-underline-offset: 4px; /* Ajusta la posición de la línea punteada si es necesario */
+    user-select: none;
+}
+
+.nombre-externo {
+    position: absolute; /* Posicionamiento absoluto */
+    right: 0; /* Alineado a la derecha */
+    bottom: -20px; /* Posicionado por fuera del fondo azul */
+    background-color: transparent; /* Sin fondo */
+    text-decoration: none; /* Sin subrayado */
+    padding-right: 1rem; /* Ajusta el padding derecho si es necesario */
+    
+}
+
+.linea{
+    border-bottom: 1px dotted var(--colorPrimario); 
+}
+.texto-h4{
+    padding-top: 2rem;
+    color: #002D5A;
+    font-weight: 600;
+    font-size: 1.6rem;
+    font-family: var(--letracuerpo);
+    font-weight: 400;
+}
+.background{
+    background-color: var(--blanco);
+    height:8rem;
+    width: 100%;
+}
+  
+.contenedor-footer{
+    height: 12rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    height: 12rem;
+}
+.pie{
+    background: linear-gradient(90deg, #f1f5f7, #dce6eb);
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+    height: 16rem;
+}
+
+
+/*Login */
+.contenedor-login{
+    background-color: var(--colorPrimario);
+    height: 6rem;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    min-height: 87vh;
+  }
+  
+.CheckBox{
+  background-color: var(--blanco);
+  width: 40rem;
+  height: 40em;
+  margin: 0; /* Elimina los márgenes externos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+  .texo-IniciarSesion{
+    color: #002D5A;
+    font-family: var(--letra-principal);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+
+    
+  }
+  .Encabezado{
+    color: #002D5A;
+    font-weight: 500;
+    font-family: var(--letra-principal);
+    font-size: 1rem;
+    padding-top: 1.5rem;
+  }
+  .campo{
+    text-align: center;
+    justify-content: center;
+    background-color:#E8F0FE;
+    border: none;
+    height: 2rem;
+    border-radius: 1rem;
+    color: #002D5A;
+    font-family: var(--letracuerpo);
+    font-weight: 500;
+    width: 20rem;
+    font-size: 1.2rem;
+   
+  }
+  .campo:focus{
+    outline: none;
+  }
+
+  
+  .boton-iniciar-sesion:active{
+    transform: scale(0.95); /* Reduce el tamaño al hacer clic */
+  }
+  .boton-iniciar-sesion {
+    
+    background-color: var(--colorPrimario); /* Color de fondo original */
+    color: white;
+    border-radius: 1rem;
+    padding: 0.6rem 2rem;
+    width: 15rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .boton-iniciar-sesion:hover {
+    transform: scale(1.1);
+    background-color: var(--blanco);
+    color: var(--primario);
+    border: 0.1rem solid var(--colorPrimario);
+  }
+ 
+  .boton{
+    text-align: center;
+  }
+  .logo-box{
+    height:5rem ;
+    width: auto;
+    padding-bottom: 1rem;
+  }
+  .fondo{
+    background: linear-gradient(90deg, #f1f5f7, #dce6eb);
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+  }
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Esto alinea el contenido a la izquierda */
+}
+contenedor-login{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+  /* Pseudoelemento para la línea debajo del texto */
+  
+  .contenedor-login{
+    display: flex;
+    height: 6rem;
+    align-items: center; /* Centra los elementos verticalmente */
+    position: relative;
+    justify-content: space-between; /* Esto separará los elementos al principio y al final del contenedor */
+    flex-direction: row-reverse;
+    padding-right: 2rem;
+  }
+  .regresar{
+    height: 3rem;
+   
+  }
+  .nav-catalogo{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #f1f5f7, #dce6eb);
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.25);
+    height: 5rem;
+   
+  }
+  .contenedor-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    height: 100%;
+    width: 16rem;
+    
+  }
+  .linde-logo{
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.sidebar{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 4rem;
+ 
+ }
+ .padding{
+   padding-left: 4rem;
+   padding-top: 2.5rem;
+ }
+ .texto-grid{
+   font-size: 1.2rem; /* Asegúrate de que el tamaño de la fuente sea legible */
+   color: #002D5A; /* Confirma que var(--negro) sea lo suficientemente oscuro contra el fondo */
+   line-height: 1.6; /* Esto es típicamente bueno para la legibilidad */
+   font-weight: 200; /* Un peso de fuente de 400 puede ser más legible que 100 */
+   margin: 0 auto; /* Esto centra el párrafo si está dentro de un contenedor más grande */
+   text-align: justify; /* Esto justifica el texto, pero usa con precaución ya que puede crear "ríos" de espacios blancos */
+   margin: 1.6rem;
+   font-family: var(--letracuerpo);
+ }
+ @media screen and (max-width: 768px) {
+  .sidebar {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    column-gap: 2rem; /* Ajusta el espacio si es necesario */
+  }
+  
+  /* Ajusta el padding y margen para dispositivos móviles */
+  .padding {
+    padding-left: 2rem;
+    padding-top: 1.5rem;
+  }
+  
+  .texto-grid {
+    /* Ajustes de tamaño de fuente y márgenes para móviles */
+    font-size: 1rem;
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contenedor-1, .contenedor-2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fondo-1, .fondo-2 {
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav a {
+    margin: 0.5rem 0;
+  }
+
+  .logo {
+    order: -1; /* moves logo to the top */
+    width: 100%; 
+    margin: 0 auto; /* centers logo */
+  }
+
+  .titulo, .banner, .contenedor-principal {
+    padding-left: 2rem; /* reduces padding */
+    padding-right: 2rem; /* reduces padding */
+  }
+
+  .texto-h1, .texto-h2, .texto-h3 {
+    font-size: 1.2rem; /* reduces font size */
+  }
+}
+/* Estilos generales para nav */
+nav {
+  z-index: 1000; /* Un valor alto para asegurarse de que esté en la parte superior */
+  position: relative; /* O 'fixed' si quieres que la barra de navegación sea fija */
+  display: flex;
+  flex-wrap: wrap; /* Permite que los enlaces se ajusten en líneas adicionales según sea necesario */
+  padding-left: 0; /* Ajusta el padding para alinear con el borde del contenedor */
+}
+
+nav a {
+  margin-right: 1rem; /* Espaciado entre enlaces */
+  padding: 0.5rem; /* Espaciado interno para hacer más fácil el toque en dispositivos táctiles */
+  white-space: nowrap; /* Asegura que el texto del enlace no se envuelva */
+}
+
+/* Media query para tablets */
+@media screen and (max-width: 1024px) {
+  nav {
+      justify-content: center; /* Centra los enlaces en tablets */
+  }
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .fondo-1, .fondo-2 {
+      padding: 0 1rem; /* Reduce el padding en los lados para más espacio */
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: flex-start; /* Alinea los enlaces a la izquierda */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      will-change: transform, opacity;
+  }
+
+
+  nav a {
+      width: 100%; /* Hace que cada enlace ocupe toda la anchura disponible */
+      margin: 0.5rem 0; /* Añade espacio vertical entre enlaces */
+  }
+  nav.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+  .logo {
+      order: -1; /* Coloca el logo arriba del todo */
+      width: 100%; /* Hace que el logo ocupe toda la anchura */
+      margin-bottom: 1rem; /* Añade espacio debajo del logo */
+  }
+}
+
+/* Menú Hamburguesa (opcional) */
+/* Asumiendo que tienes un botón de menú hamburguesa con la clase .menu-btn */
+.menu-btn {
+  display: none; /* Este botón está oculto por defecto */
+  /* Estilos adicionales del botón aquí */
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+      display: block;
+      position: absolute; /* O 'fixed' si se necesita */
+       top: 0;
+      left: 0;
+        z-index: 1001; /* Asegúrate de que esté por encima de todo lo demás */
+  }
+
+  nav {
+      display: none; /* El menú de navegación está oculto por defecto en pantallas pequeñas */
+  }
+
+  nav.active {
+      display: block; /* El menú de navegación se muestra cuando tiene la clase .active */
+  }
+}
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--colorPrimario);
+  cursor: pointer;
+  font-family: var(--fuenteHeading);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+      display: block;
+      
+  }
+}
+@media (max-width: 768px) {
+  .contenedor-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center; /* Alinea elementos al inicio (izquierda) */
+  }
+
+  .logo {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    order: 2; 
+    height: 80%; 
+    
+  }
+
+  .menu-btn {
+    /* Estilos específicos para el botón del menú en dispositivos móviles */
+    margin-top: 1rem; /* Proporciona espacio debajo del botón del menú */
+  }
+
+  nav {
+    width: 100%; /* O el ancho que desees */
+    box-sizing: border-box; /* Para incluir el padding en el ancho total */
+    padding: 10px 0; /* Espacio arriba y abajo dentro de nav */
+  }
+
+  nav a {
+    display: block; /* Hace que cada enlace se muestre en su propia línea */
+    padding: 5px 0; /* Espacio arriba y abajo para cada enlace */
+  }
+
+  /* Si el menú es desplegable, asegúrate de que se muestre sobre otros elementos */
+  nav.active {
+    position: absolute;
+    background: var(--gris); /* O el color de fondo que prefieras */
+    top: 100%; /* Justo debajo del elemento anterior */
+    left: 0;
+    right: 0;
+  }
+}
+
+.logo2 {
+  margin-top: 0.5rem;
+  height: 80%; 
+  margin-left: 1rem;
+}
+.contenedor-grid{
+  display: grid;
+  margin-top: 5vh;
+  margin-left: 2vh;
+  grid-template-areas: "filtro produtos";
+  grid-template-columns: 30% 70%;
+}
+.filtro-usuario{
+  grid-area: filtro;
+}
+.productos{
+  grid-area: produtos;
+}
+.caja-filtro{
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F6F9;
+  color: #00A0E1;
+  height: auto;
+  width: 92%;
+  padding-bottom: 3vh;
+  
+}
+.texto-filtro a{
+  color:#00A0E1 ;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: var(--letracuerpo);
+}
+ul {
+  margin-top: 2vh;
+  margin-left: 4vh;
+  list-style-type: disc; /* O cualquier tipo de marcador que prefieras */
+  font-size: 1.2rem; /* Aumenta el tamaño de la fuente (y del marcador) */
+}
+ul li {
+  font-size: 1.8rem; /* Restablece el tamaño de la fuente del texto a algo más pequeño que el UL */
+}
+.fondo-soldador{
+  width: 100%;
+  height: 25rem;
+}
+.imagen{
+  position: relative;
+  max-height: 25rem;
+  min-height: 100%;
+}
+.overlay{
+  position: absolute;
+  width: 100%;
+  height:25rem;
+  display: flex;
+  align-items: center;
+
+}
+.contenido-imagen{
+  z-index: 1;
+  
+}
+.texto-imagen{
+  margin-left: 3vh;
+  color: var(--blanco);
+  font-size: 1.6rem;
+  font-family: var(--letracuerpo);
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  user-select: none;
+}
+.texto-imagen-parrafo{
+  margin-left: 3vh;
+  color: var(--blanco);
+  font-size: 1.4rem;
+  font-family: var(--letracuerpo);
+  font-weight: 200;
+  margin-bottom: 1.6rem;
+  user-select: none;
+}
+.boton-personalizado {
+  margin-left: 3vh;
+  background-color: #00A0E1; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado dentro del botón */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px #0056b3; /* Sombra con efecto de profundidad */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor a mano cuando se pasa el mouse */
+  transition: all 0.3s; /* Transición suave para los estados hover y active */
+}
+
+.boton-personalizado:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.boton-personalizado:active {
+  box-shadow: 0 2px #003366; /* Sombra más corta para el efecto de presión */
+  transform: translateY(2px); /* Mueve el botón hacia abajo para simular presión */
+}
+
+.contenedor-texto__catalogo{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.texto-titulos__catalogo{
+  text-align: center;
+  color: #005591;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+.texto-parrafo__catalogo{
+  text-align: center;
+  color: #007AB9;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 200;
+  font-size: 1.2rem;
+}
+.contenedor__grid-cajas{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust the min and max sizes as needed */
+  gap: 20px; /* This sets the space between grid items */
+  padding: 20px; /* This adds space around the entire grid */
+  height: 100%;
+}
+
+.caja-productos{
+  background-color: #F1F6F9;
+  border-radius: 4px; /* This rounds the corners of the product boxes */
+  padding: 16px; /* This adds space inside the product boxes */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* This adds a subtle shadow to each product box */
+  transition: transform 0.3s ease-in-out; /* This adds a smooth transition effect for hover state */
+  width: 100%;
+  height: 100%;
+}
+.caja-productos:hover {
+  transform: translateY(-5px); /* This lifts the product box slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* This enhances the shadow on hover */
+}
+.producto-imagen {
+  width: 100%; /* This ensures the image takes up the full width of the box */
+  height: auto; /* This keeps the image aspect ratio intact */
+  border-bottom: 1px solid #e1e1e1; /* This adds a subtle separator between the image and the product info */
+  margin-bottom: 16px; /* This adds some space between the image and the product info */
+}
+
+.producto-info {
+  text-align: center; /* This centers the product info text */
+  color: #005591;
+}
+
+.producto-nombre {
+  font-size: 1rem; /* Adjust font-size as needed */
+  margin-bottom: 8px; /* This adds some space between the product name and the price */
+  color: #005591;
+}
+
+.producto-precio {
+  font-size: 1.25rem; /* Adjust font-size as needed */
+  font-weight: bold; /* This makes the price stand out */
+  color: #005591; /* Adjust color as needed */
+}
+
+.filtro-avanzado{
+  display: block;
+  flex-direction: column;
+  background-color: #F1F6F9;
+  color: #00A0E1;
+  height: auto;
+  width: 85%;
+  padding-bottom: 3vh;
+  margin-top: 2vh;
+  font-family: Arial, sans-serif; /* Establece una tipografía */
+}
+.texto-filtro-avanzado{
+  color: #232323;
+  font-weight: bold;
+  padding-top: 1vh;
+  margin-left: 2vh;
+  padding-bottom: 1vh;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: var(--letracuerpo);
+}
+.filtro-opcion {
+  margin-bottom: 15px; /* Espacio entre los filtros */
+  width: 80%;
+  margin-left: 2vh;
+}
+
+.filtro-opcion label {
+  margin-left: 1vh;
+  display: block; /* Hace que el texto del label sea bloque para que el select esté debajo */
+  margin-bottom: 5px; /* Espacio entre el label y el select o la lista */
+}
+
+.filtro-opcion select,
+.filtro-opcion ul {
+  width: 100%; /* Ocupa el ancho disponible */
+  padding: 10px;
+  margin-bottom: 10px; /* Espacio después del select o la lista */
+}
+
+.filtro-opcion ul {
+  list-style: none; /* Quita los bullets de la lista */
+  padding-left: 0; /* Quita el padding izquierdo de la lista */
+}
+
+.filtro-opcion li {
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-bottom: 5px; /* Espacio entre opciones de la lista */
+  font-size: 1.6rem;
+}
+
+.filtro-opcion input[type="checkbox"] {
+  margin-right: 5px; /* Espacio entre el checkbox y su label */
+}
