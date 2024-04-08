@@ -136,7 +136,7 @@ img{
     font-family: var(--letra-principal);
     font-size: 1.2rem; /* Reducido para ocupar menos espacio */
     margin-left: 1rem; /* Reducido para tener menos espacio entre enlaces */
-    color: var(--colorPrimario);
+    color: #0079d2;
     margin-left: 2rem; /* Añade espacio entre los enlaces */
     position: relative;
     text-decoration: none; /* quita el subrayado predeterminado */
@@ -155,7 +155,7 @@ nav a::after {
     bottom: 0;
     width: 0;
     height: 0.2rem; /* o el grosor del subrayado que prefieras */
-    background-color: var(--colorPrimario); 
+    background-color: #0079d2; 
     transition: width 0.3s ease, left 0.3s ease; /* suaviza la transición del ancho y la posición */
   }
   
@@ -878,4 +878,24 @@ ul li {
 
 .filtro-opcion input[type="checkbox"] {
   margin-right: 5px; /* Espacio entre el checkbox y su label */
+}
+
+.catalogo-nav{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  position: absolute;
+}
+nav a.active::after {
+  width: 100%; /* Hace que el subrayado ocupe el ancho completo desde el inicio */
+  left: 0; /* Alinea el subrayado desde el borde izquierdo */
+  height: 0.2rem; /* Mantén el grosor del subrayado */
+  background-color:var(--colorPrimario); /* Considera usar un color secundario para diferenciar */
+  /* Si prefieres mantener el mismo color, simplemente usa var(--colorPrimario) */
+}
+
+/* Puedes considerar también cambiar el color del texto para la pestaña activa para mayor claridad */
+nav a.active {
+  color: var(--colorPrimario); /* Un color diferente para el texto podría ayudar */
+  /* O mantener var(--colorPrimario) si deseas consistencia */
 }
