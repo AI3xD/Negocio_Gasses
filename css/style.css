@@ -135,7 +135,6 @@ img{
     
     font-family: var(--letra-principal);
     font-size: 1.2rem; /* Reducido para ocupar menos espacio */
-    margin-left: 1rem; /* Reducido para tener menos espacio entre enlaces */
     color: #0079d2;
     margin-left: 2rem; /* Añade espacio entre los enlaces */
     position: relative;
@@ -383,6 +382,7 @@ nav a::after {
     text-align: center;
   }
   .logo-box{
+    z-index: 1;
     height:5rem ;
     width: auto;
     padding-bottom: 1rem;
@@ -873,7 +873,7 @@ ul li {
   display: flex; /* Alinea los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   margin-bottom: 5px; /* Espacio entre opciones de la lista */
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .filtro-opcion input[type="checkbox"] {
@@ -885,6 +885,7 @@ ul li {
   width: 100%;
   flex-direction: row-reverse;
   position: absolute;
+  z-index: 2;
 }
 nav a.active::after {
   width: 100%; /* Hace que el subrayado ocupe el ancho completo desde el inicio */
@@ -898,4 +899,33 @@ nav a.active::after {
 nav a.active {
   color: var(--colorPrimario); /* Un color diferente para el texto podría ayudar */
   /* O mantener var(--colorPrimario) si deseas consistencia */
+}
+
+.absoluto{
+  position: absolute;
+  height: 100%;
+}
+.catalogo-nav button {
+  background: none; /* Sin fondo para que tome el color de fondo de la barra de navegación */
+  border: none; /* Sin bordes para un aspecto limpio */
+  margin-left: 2rem; /* Añade espacio entre los enlaces */
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave para interacción */
+}
+
+.catalogo-nav button:hover, .catalogo-nav button:focus {
+  background-color: rgba(0, 121, 210, 0.1); /* Un ligero fondo al pasar el mouse o enfocar */
+  transform: translateY(-2px); /* Un pequeño movimiento hacia arriba para efecto de elevación */
+}
+
+.catalogo-nav button:active {
+  transform: translateY(1px); /* Movimiento hacia abajo al hacer clic para efecto de presión */
+}
+
+.catalogo-nav svg {
+  transition: fill 0.3s; /* Transición suave para el color */
+}
+
+.catalogo-nav button:hover svg, .catalogo-nav button:focus svg {
+  fill: #0079d2; /* Cambia el color del ícono al pasar el mouse o enfocar */
 }
