@@ -911,11 +911,14 @@ nav a.active {
   margin-left: 1.4rem; /* Añade espacio entre los enlaces */
   cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
   transition: background-color 0.3s, transform 0.3s; /* Transición suave para interacción */
+  
+  transform: translateY(-2px); /* Un pequeño movimiento hacia arriba para efecto de elevación */
+
 }
 
 .catalogo-nav button:hover, .catalogo-nav button:focus {
   background-color: rgba(0, 121, 210, 0.1); /* Un ligero fondo al pasar el mouse o enfocar */
-  transform: translateY(-2px); /* Un pequeño movimiento hacia arriba para efecto de elevación */
+  transform: translateY(-4px); /* Un pequeño movimiento hacia arriba para efecto de elevación */
 }
 
 .catalogo-nav button:active {
@@ -930,3 +933,44 @@ nav a.active {
   fill: #0079d2; /* Cambia el color del ícono al pasar el mouse o enfocar */
 }
 
+footer {
+  font-family: 'Arial', sans-serif; /* o la fuente que prefieras */
+}
+
+.contenedor-footer__catalogo {
+  display: flex;
+  margin-top: 3rem;
+  background-color: #005591;
+  align-items: flex-end;
+  height: 12rem;
+}
+
+.contenedor-footer__catalogo-forma-de-pago {
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4C88B2;
+  padding: 0 2rem; /* Ajusta el relleno según sea necesario */
+  height: 5rem;
+  color: white; /* Color del texto */
+}
+
+.texto-footer-catalogo {
+  margin: 0; /* Asegúrate de que no haya margen por defecto */
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.iconos-sociales {
+  
+  display: flex;
+  align-items: center;
+}
+
+.icono-social {
+  margin-left: 1rem; /* Espacio entre iconos */
+  color: white; /* Color de los iconos */
+  text-decoration: none; /* Eliminar subrayado de los enlaces */
+  /* Aquí deberías agregar estilos para los íconos en sí, como fuentes de iconos o imágenes de fondo */
+}
