@@ -136,7 +136,7 @@ img{
     font-family: var(--letra-principal);
     font-size: 1.2rem; /* Reducido para ocupar menos espacio */
     color: #0079d2;
-    margin-left: 2rem; /* Añade espacio entre los enlaces */
+    margin-left: 1.4rem; /* Añade espacio entre los enlaces */
     position: relative;
     text-decoration: none; /* quita el subrayado predeterminado */
     overflow: hidden; /* asegúrate de que el pseudo-elemento no se muestre fuera del enlace */
@@ -908,7 +908,7 @@ nav a.active {
 .catalogo-nav button {
   background: none; /* Sin fondo para que tome el color de fondo de la barra de navegación */
   border: none; /* Sin bordes para un aspecto limpio */
-  margin-left: 2rem; /* Añade espacio entre los enlaces */
+  margin-left: 1.4rem; /* Añade espacio entre los enlaces */
   cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
   transition: background-color 0.3s, transform 0.3s; /* Transición suave para interacción */
 }
