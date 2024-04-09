@@ -971,6 +971,6 @@ footer {
 .icono-social {
   margin-left: 1rem; /* Espacio entre iconos */
   color: white; /* Color de los iconos */
-  text-decoration: none; /* Eliminar subrayado de los enlaces */
-  /* Aquí deberías agregar estilos para los íconos en sí, como fuentes de iconos o imágenes de fondo */
+  text-decoration: none; 
 }
+
