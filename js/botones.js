@@ -6,4 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('botonCesta').addEventListener('click', function() {
         window.location.href = 'tu_url_de_cesta.html';
     });
+    document.getElementById('botonInformacion').addEventListener('click', function() {
+        window.location.href = 'servicios.html';  
+    })
 });
