@@ -656,7 +656,8 @@ nav a {
 
 .logo2 {
   margin-top: 0.5rem;
-  height: 80%; 
+  height: 80%;
+  width: 100%; 
   margin-left: 1rem;
 }
 .contenedor-grid{
@@ -984,3 +985,33 @@ footer {
 .active-carrito{
   fill: #0079d2;
 }
+
+.contenedor__producto-info{
+  margin: 4rem auto;
+  width: 80%;
+  height: auto;
+  padding-bottom:2rem ;
+}
+.contenedor-grid__info{
+  display: grid;
+  grid-template-areas: "imagen produtos-info";
+  grid-template-columns: 40% 60%;
+}
+
+.producto__imagen-producto{
+  grid-area: imagen;
+  height: auto;
+  padding-bottom: 2rem;
+}
+
+
+.producto__info-producto{
+  grid-area: produtos-info;
+  height:auto;
+}
+.imagen__producto{
+  width: 85%;
+  height:28rem;
+  padding-bottom: 2rem;
+}
+
