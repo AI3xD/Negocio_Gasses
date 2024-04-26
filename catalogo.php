@@ -1,3 +1,21 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "gases";
+
+// Crear conexión con MySQL
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Paso 2: Consulta para obtener solo productos de la categoría 'equipos'
+$sql = "SELECT codigo, nombre, precio_venta, imagen_producto FROM productos WHERE categoria = 'equipos'";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -42,7 +60,7 @@
           <a href="">Ver más</a>
           <a href="gases.html">Gases</a>
           <a href="soldadura.html">Soldaduras</a>
-          <a href="Seguridad.html">Equipos de seguridad</a>
+          <a href="Seguridad.php">Equipos de seguridad</a>
           <a class="active" href="">Equipos</a>
         </nav>
       </div>
@@ -138,174 +156,34 @@
         </div>
 
         <div>
-            <div class="productos">
-                <div class="contenedor__grid-cajas">
-                  
-                  <a href="#">
-                    <div class="caja-productos">
-                      <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                      <div class="producto-info">
-                        <p class="producto-nombre">Millermatic 252</p>
-                        <p class="producto-precio">$68,411.51</p>
-                      </div>
-                    </div>
-                  </a>
-                  
-             
-                  <a href="#">
-                    <div class="caja-productos">
-                      <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                      <div class="producto-info">
-                        <p class="producto-nombre">Millermatic 252</p>
-                        <p class="producto-precio">$68,411.51</p>
-                      </div>
-                    </div>
-                  </a>
-                  
-                  <a href="#">
-                    <div class="caja-productos">
-                      <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                      <div class="producto-info">
-                        <p class="producto-nombre">Millermatic 252</p>
-                        <p class="producto-precio">$68,411.51</p>
-                      </div>
-                    </div>
-                  </a>
+        <div class="productos">
+      <div class="contenedor__grid-cajas">
+        <?php
+        // Paso 3: Generar HTML para productos de 'equipos'
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $nombre = $row["nombre"];
+                $precio = $row["precio_venta"];
+                $imagen = $row["imagen_producto"];
 
-                  <a href="#">
-                    <div class="caja-productos">
-                      <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                      <div class="producto-info">
-                        <p class="producto-nombre">Millermatic 252</p>
-                        <p class="producto-precio">$68,411.51</p>
-                      </div>
-                    </div>
-                  </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-                      
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-                      <a href="#">
-                        <div class="caja-productos">
-                          <img src="img/producto.jpg" alt="Millermatic 252" class="producto-imagen" />
-                          <div class="producto-info">
-                            <p class="producto-nombre">Millermatic 252</p>
-                            <p class="producto-precio">$68,411.51</p>
-                          </div>
-                        </div>
-                      </a>
-
-            </div>
-        </div>
+                echo '<a href="#">';
+                echo '  <div class="caja-productos">';
+                echo '    <img src="img/' . $imagen . '" alt="' . $nombre . '" class="producto-imagen" />';
+                echo '    <div class="producto-info">';
+                echo '      <p class="producto-nombre">' . $nombre . '</p>';
+                echo '      <p class="producto-precio">$' . number_format($precio, 2) . '</p>';
+                echo '    </div>';
+                echo '  </div>';
+                echo '</a>';
+            }
+        } else {
+            echo "No se encontraron productos de la categoría 'equipos'.";
+        }
+        ?>
 
     </div>
+</div>
+</div>
 </div>
 <footer>
   <div class="contenedor-footer__catalogo">

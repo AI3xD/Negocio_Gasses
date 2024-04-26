@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     document.getElementById('botonCesta').addEventListener('click', function() {
-        window.location.href = 'tu_url_de_cesta.html';
+        window.location.href = 'carrito.html';
     });
     document.getElementById('botonInformacion').addEventListener('click', function() {
         window.location.href = 'servicios.html';  
