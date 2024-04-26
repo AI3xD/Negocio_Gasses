@@ -70,7 +70,7 @@ $result = $conn->query($sql);
             <div class="contenido-imagen">
                 <h2 class="texto-imagen" >Gases para soldar</h2>
                 <p class="texto-imagen-parrafo">Descubre como obtener el mayor rendimiento en la soldadura.</p>
-                <a id="botonInformacion" href="#" class="boton-personalizado">información</a>
+                <a id="botonInformacion"  class="boton-personalizado">información</a>
             </div>
         </div>
         <img  class="fondo-soldador" src="img/GasesBanner.jpg" alt="Imagen soldador">

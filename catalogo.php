@@ -166,7 +166,7 @@ $result = $conn->query($sql);
                 $precio = $row["precio_venta"];
                 $imagen = $row["imagen_producto"];
 
-                echo '<a href="#">';
+                echo '<div onClick="agregarAlCarrito(\'' . $row["codigo"] . '\')">';
                 echo '  <div class="caja-productos">';
                 echo '    <img src="img/' . $imagen . '" alt="' . $nombre . '" class="producto-imagen" />';
                 echo '    <div class="producto-info">';
@@ -174,7 +174,7 @@ $result = $conn->query($sql);
                 echo '      <p class="producto-precio">$' . number_format($precio, 2) . '</p>';
                 echo '    </div>';
                 echo '  </div>';
-                echo '</a>';
+                echo '</div>';
             }
         } else {
             echo "No se encontraron productos de la categoría 'equipos'.";
@@ -228,5 +228,6 @@ $result = $conn->query($sql);
 </footer>
 
     <script src="js/botones.js"></script>
+    <script src="js/carrito.js" ></script>
   </body>
 </html>
