@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root{
     --colorPrimario:#005591;
     --colorSecundario:rgb(28, 127, 226);
@@ -1010,8 +1011,101 @@ footer {
   height:auto;
 }
 .imagen__producto{
-  width: 85%;
-  height:28rem;
   padding-bottom: 2rem;
+  image-rendering: crisp-edges;
+  width: auto;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .imagen__producto {
+      width: 90%;  /* Agranda la imagen para pantallas más grandes */
+      max-width: 600px;  /* Define un límite para evitar estiramientos excesivos */
+  }
+}
+.contenedor__info-titulo{
+  width: 85%;
+}
+.info__producto-titulo{
+  font-family: "Raleway", sans-serif;
+  font-weight: 500; /* Establece un peso audaz para el título */
+  font-size: 2.2rem; /* Tamaño de fuente para el título */
+  color: #005591; /* Color del título */
+}
+.texto__descripcion-producto{
+  font-family: "Raleway", sans-serif;
+  font-weight: 400; /* Establece un peso audaz para el título */
+  font-size: 1.2rem; /* Tamaño de fuente para el título */
+  color: #333; /* Color del título */
+  text-align: justify;
+ 
+}
+.btn__agregar-producto {
+  margin-top: 1vh;
+  position: absolute;
+  margin-left: 1vh;
+  background-color: #00A0E1; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado dentro del botón */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px #0056b3; /* Sombra con efecto de profundidad */
+  font-size: 16px; /* Tamaño del texto */
+  cursor: pointer; /* Cambia el cursor a mano cuando se pasa el mouse */
+  transition: all 0.3s; /* Transición suave para los estados hover y active */
+  text-transform: uppercase;
+}
+.btn__agregar-producto:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el mouse */
 }
 
+.btn__agregar-producto:active {
+  box-shadow: 0 2px #003366; /* Sombra más corta para el efecto de presión */
+  transform: translateY(2px); /* Mueve el botón hacia abajo para simular presión */
+}
+
+.producto__cantidad-unidades {
+  display: flex;
+  flex-direction: column; /* Esto alinea los elementos de forma vertical */
+  margin-top: 1.2rem; /* Añade un poco de espacio entre la descripción y esta sección */
+  font-family: 'Poppins', sans-serif; /* Fuente a usar */
+  line-height: 1.8rem;
+}
+
+.producto__cantidad-unidades span {
+  font-size: 1.1rem; /* Tamaño de fuente */
+  color: #005591; /* Color del texto */
+  font-weight: 500; /* Peso del texto para mejor legibilidad */
+}
+
+.producto__elegir-cantidad {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Añade un poco de espacio debajo */
+}
+
+.producto__elegir-cantidad label {
+  font-size: 1.1rem; /* Tamaño de fuente para el texto del label */
+  font-weight: 500; /* Peso del texto */
+  color: #005591; /* Color del texto */
+  margin-right: 0.5rem; /* Espacio entre el label y el campo de entrada */
+}
+
+.producto__elegir-cantidad input {
+  width: 50px; /* Ancho del campo de entrada */
+  padding: 5px; /* Espacio dentro del campo */
+  font-size: 1rem; /* Tamaño de fuente para el campo */
+  text-align: center; /* Centrar el texto */
+  border: 1px solid #ccc; /* Borde del campo */
+  border-radius: 4px; /* Bordes redondeados */
+  
+}
+
+.input-number {
+  -webkit-appearance: none; /* Elimina las flechas en Chrome y Safari */
+  -moz-appearance: textfield; /* Elimina las flechas en Firefox */
+  appearance: none; /* Para otros navegadores */
+}
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button {
+    display: none; /* Oculta las flechas */
+}
