@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 // Paso 2: Consulta para obtener solo productos de la categoría 'equipos'
 $sql = "SELECT codigo, nombre, precio_venta, imagen_producto FROM productos WHERE categoria = 'equipos'";
 $result = $conn->query($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -177,7 +178,9 @@ $result = $conn->query($sql);
 
                 echo '<div onClick="agregarAlCarrito(\'' . $row["codigo"] . '\')">';
                 echo '  <div class="caja-productos">';
+                echo '   <a href="/producto.php?id=' . $row["codigo"] . '"> ';
                 echo '    <img src="img/' . $imagen . '" alt="' . $nombre . '" class="producto-imagen" />';
+                echo '   </a>';
                 echo '    <div class="producto-info">';
                 echo '      <p class="producto-nombre">' . $nombre . '</p>';
                 echo '      <p class="producto-precio">$' . number_format($precio, 2) . '</p>';

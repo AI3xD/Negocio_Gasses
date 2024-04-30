@@ -120,28 +120,30 @@ $result = $conn->query($sql);
         <div>
         <div class="productos">
       <div class="contenedor__grid-cajas">
-        <?php
-        // Paso 3: Generar HTML para productos de 'equipos'
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+      <?php
+            // Paso 3: Generar HTML para productos de 'equipos'
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
                 $nombre = $row["nombre"];
                 $precio = $row["precio_venta"];
                 $imagen = $row["imagen_producto"];
 
-                echo '<a href="#">';
+                echo '<div onClick="agregarAlCarrito(\'' . $row["codigo"] . '\')">';
                 echo '  <div class="caja-productos">';
+                echo '   <a href="/producto.php?id=' . $row["codigo"] . '"> ';
                 echo '    <img src="img/' . $imagen . '" alt="' . $nombre . '" class="producto-imagen" />';
+                echo '   </a>';
                 echo '    <div class="producto-info">';
                 echo '      <p class="producto-nombre">' . $nombre . '</p>';
                 echo '      <p class="producto-precio">$' . number_format($precio, 2) . '</p>';
                 echo '    </div>';
                 echo '  </div>';
-                echo '</a>';
+                echo '</div>';
+              }
+            } else {
+              echo "No se encontraron productos de la categoría 'soldadura'.";
             }
-        } else {
-            echo "No se encontraron productos de la categoría 'equipos'.";
-        }
-        ?>
+            ?>
 
     </div>
 </div>
