@@ -42,6 +42,37 @@
         </div>
       </header>
       
-   
+      <div class="contenedor carrito">
+        <h2 class="titulo__carrito">Carrito</h2>
+      
+        <!-- Producto 1 -->
+        <div class="item-carrito">
+          <input type="checkbox" id="producto1" class="checkbox-producto" name="producto_seleccionado" value="producto1">
+          <label for="producto1" class="label-checkbox-producto"></label>
+          <img src="img/producto.jpg" alt="Producto" class="imagen-producto-carrito">
+          <div class="detalle-item-carrito">
+            <h3 class="nombre-item-carrito">Nombre del Producto 1</h3>
+            <p class="descripcion-item-carrito">Descripción breve del producto 1.</p>
+            <div class="acciones-item-carrito">
+              <input type="number" value="1" class="input-cantidad">
+              <button class="boton-personalizado boton-eliminar">Eliminar</button>
+            </div>
+          </div>
+          <p class="precio-item-carrito">$999.00</p>
+        </div>
+
+        
+      
+        <!-- Repetir este bloque para cada producto en el carrito -->
+      
+        <!-- Total del carrito -->
+        <div class="checkout-area">
+          <div class="total-carrito">
+            <span>Total: ‎ </span>
+            <span class="total-precio">$0.00</span>
+          </div>
+          <button class="boton-personalizado boton-comprar">Comprar</button>
+        </div>
+    
 </body>
 </html>

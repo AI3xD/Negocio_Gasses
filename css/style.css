@@ -1109,3 +1109,157 @@ footer {
 .input-number::-webkit-outer-spin-button {
     display: none; /* Oculta las flechas */
 }
+
+.carrito {
+  width: 100%;
+  max-width: 120rem; 
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.item-carrito {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--gris);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.imagen-producto-carrito {
+  width: 10rem; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  margin-right: 2rem;
+}
+
+.detalle-item-carrito h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.detalle-item-carrito p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.acciones-item-carrito {
+  display: flex;
+  align-items: center;
+}
+
+.acciones-item-carrito input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  width: 4rem;
+}
+
+.precio-item-carrito {
+  font-size: 1.6rem;
+  margin-left: auto; /* Esto alinea el precio a la derecha */
+  color: #333;
+}
+.titulo__carrito{
+  font-family: "Raleway", sans-serif;
+  font-weight: 500; /* Establece un peso audaz para el título */
+  font-size: 3.8rem; /* Tamaño de fuente para el título */
+  color: #005591; /* Color del título */
+}
+.nombre-item-carrito{
+  color: var(--colorPrimario);
+  font-family: "Raleway", sans-serif;
+}
+.descripcion-item-carrito{
+  color: #333;
+  font-family: "Raleway", sans-serif;
+}
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end; /* Esto alinea el botón a la derecha */
+  padding-top: 1rem; /* Añade un espacio encima del botón */
+}
+
+.boton-comprar {
+  padding: 10px 30px; /* Ajusta el padding para hacer el botón más grande */
+  font-size: 1.4rem; /* Tamaño de letra más grande para el botón */
+  background-color: var(--colorPrimario); /* El color primario para que destaque */
+  color: var(--blanco); /* Texto blanco para contraste */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo puntero para indicar que es clickeable */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+  box-shadow: 0 4px var(--colorSecundario); /* Sombra para dar efecto de profundidad */
+}
+
+.boton-comprar:hover {
+  background-color: var(--colorSecundario); /* Cambia de color al pasar el ratón por encima */
+}
+
+.boton-comprar:active {
+  box-shadow: 0 2px var(--colorSecundario); /* Sombra más pequeña para el efecto al presionar */
+  transform: translateY(2px); /* Mueve el botón hacia abajo para simular el efecto de presionar */
+}
+.item-carrito {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox-producto {
+  margin-right: 1rem;
+}
+
+.label-checkbox-producto {
+  margin-right: 1rem; /* Espacio entre el checkbox y la imagen */
+}
+.total-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: var(--colorPrimario);
+}
+
+.total-precio {
+  font-weight: bold;
+}
+
+/* Asegúrate de que el botón de comprar esté alineado a la derecha */
+.acciones-carrito {
+  display: flex;
+  justify-content: flex-end;
+}
+.contenedor.carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que el contenido se distribuya de principio a fin */
+  min-height: calc(100vh - 5rem); /* Reemplaza [Altura del Header] con la altura real de tu header */
+}
+
+.total-carrito {
+  margin-top: auto; /* Empuja el total hacia abajo */
+  padding: 1rem;
+  /* resto de tus estilos para total-carrito... */
+}
+
+.acciones-carrito {
+  margin-top: auto; /* Empuja el botón Comprar hacia abajo */
+  /* resto de tus estilos para acciones-carrito... */
+}
+.contenedor.carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 5rem ); /* Asegúrate de ajustar con la altura de tu header y footer */
+}
+
+.checkout-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: auto;
+}
