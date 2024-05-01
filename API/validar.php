@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordHash=trim($row['password']);
         if (sha1($password) == $passwordHash) {
             session_start();
+            $_SESSION['loggedin'] = true; // Establecer la sesión como logueada
             $_SESSION['username'] = $username;
             $_SESSION['id'] = $row['id'];
             $_SESSION['tipo_usuario'] = $row['tipo_usuario'];

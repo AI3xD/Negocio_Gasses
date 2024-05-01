@@ -27,7 +27,7 @@
 
 
           <div class="fadeIn first">
-            <a href="index.html">
+            <a href="index.php">
               <img src="img/logoLinde.png" id="icon" alt="User Icon" />
             </a>
           </div>

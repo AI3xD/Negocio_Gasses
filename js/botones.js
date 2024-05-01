@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     try {
         document.getElementById('botonInicio').addEventListener('click', function() {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         });
     
         document.getElementById('botonCesta').addEventListener('click', function() {
-            window.location.href = 'carrito.html';
+            window.location.href = 'carrito.php';
         });
         document.getElementById('botonInformacion').addEventListener('click', function() {
-            window.location.href = 'servicios.html';  
+            window.location.href = 'servicios.php';  
         })
     } catch (error) {
         

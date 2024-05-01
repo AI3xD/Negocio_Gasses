@@ -17,7 +17,18 @@
     <header>
         <div class="fondo-1">
             <div class="contenedor-1">
-                <a class="texto-iniciar animacion" href="login.php">Iniciar Sesion</a>
+            <?php
+                session_start(); // Asegúrate de que la sesión está iniciada
+                
+                // Condición para verificar si el usuario está logueado
+                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+                    // Botón de cerrar sesión
+                    echo '  <a class="texto-iniciar animacion" href="api/logout.php">Cerrar Sesion</a>';
+                } else {
+                    // Botón de iniciar sesión
+                    echo '  <a class="texto-iniciar animacion" href="login.php">Iniciar Sesion</a>';
+                }
+                ?>
 
             </div>
         </div>
@@ -27,11 +38,11 @@
                 <button class="menu-btn">☰ Menu</button>
                 <nav>
                     <a href="catalogo.php">Catálogo</a>
-                    <a href="servicios.html">Servicios</a>
-                    <a href="contactanos.html">Contactanos</a>
+                    <a href="servicios.php">Servicios</a>
+                    <a href="contactanos.php">Contactanos</a>
                 </nav>
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="img/logoLinde.png" alt="">
                     </a>
                 </div>
