@@ -5,6 +5,16 @@ $id = $_GET['id'];
 $query = "SELECT * FROM productos WHERE codigo='$id'";
 $consulta = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($consulta);
+
+
+
+// Suponiendo que ya tienes el $id del producto actual
+$categoria_actual = $row['categoria'];
+
+// Consulta para obtener otros 4 productos de la misma categoría, excluyendo el actual
+$query_relacionados = "SELECT * FROM productos WHERE categoria='$categoria_actual' AND codigo != '$id' LIMIT 4";
+$consulta_relacionados = mysqli_query($conn, $query_relacionados);
+$productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -59,9 +69,9 @@ $row = mysqli_fetch_array($consulta);
         </button>
         <a href="">Ver más</a>
         <a href="gases.html">Gases</a>
-        <a href="soldadura.html">Soldaduras</a>
+        <a href="soldadura.php">Soldaduras</a>
         <a href="Seguridad.php">Equipos de seguridad</a>
-        <a href="equipo.php">Equipos</a>
+        <a href="catalogo.php">Equipos</a>
       </nav>
     </div>
   </header>
@@ -69,8 +79,9 @@ $row = mysqli_fetch_array($consulta);
     <div class="contenedor-grid__info">
       <div class="producto__imagen-producto">
         <!-- Imagen del producto -->
-        <div class="contenedor__imagen-posicion">
-          <img class="imagen__producto" src="img/producto.jpg" alt="soldadura" />
+        <div class="producto__imagen-producto">
+          <img class="imagen__producto" src="img/<?php echo htmlspecialchars($row['imagen_producto']); ?>"
+            alt="<?php echo htmlspecialchars($row['nombre']); ?>" />
         </div>
       </div>
       <div class="producto__info-producto">
@@ -86,12 +97,12 @@ $row = mysqli_fetch_array($consulta);
           <?php echo $codigo = $row['descripcion'];
           ?>
         </p>
-        
+
         <!-- Información adicional de cantidad y unidades disponibles -->
         <div class="producto__cantidad-unidades">
           <span>Cantidad disponible: <?php echo $codigo = $row['cantidad_disponible'];
           ?></span>
-            <span>Precio: <?php echo $codigo = $row['precio_venta'];
+          <span>Precio: <?php echo $codigo = $row['precio_venta'];
           ?></span>
           <span>Unidades: piezas</span>
           <div class="producto__elegir-cantidad">
@@ -99,17 +110,34 @@ $row = mysqli_fetch_array($consulta);
             ?></label>
             <input type="number" id="cantidad" name="cantidad" class="input-number" min="1" max="50" step="1"
               value="1" />
-              
-              
+
+
           </div>
         </div>
-        
+
         <a href="#" class="btn__agregar-producto">Agregar al carrito</a>
       </div>
+
     </div>
+    <div class="otros-productos">
+      <h2 class="titulo-otros-productos">Otros Productos</h2>
+      <div class="grid-productos">
+        <?php foreach ($productos_relacionados as $producto) { ?>
+          <div class="producto">
+            <a href="producto.php?id=<?php echo htmlspecialchars($producto['codigo']); ?>">
+              <img src="img/<?php echo htmlspecialchars($producto['imagen_producto']); ?>"
+                alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
+            </a>
+            <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
+            <p>Precio: $<?php echo number_format($producto['precio_venta'], 2); ?></p>
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+
+  </div>
   </div>
 
-  
 
   <footer>
     <div class="contenedor-footer__catalogo">

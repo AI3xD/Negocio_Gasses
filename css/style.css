@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root{
+
     --colorPrimario:#005591;
     --colorSecundario:rgb(28, 127, 226);
     --gris:#dce6eb;
@@ -28,14 +29,16 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Altura mínima de la ventana del navegador */
+    min-height: 100%; /* Altura mínima de la ventana del navegador */
 }
 
 .contenido-principal {
     flex: 1;
     /* Asegúrate de que cualquier otro contenido aquí esté configurado correctamente */
 }
-
+main {
+  flex: 1; /* Permite que el main ocupe todo el espacio disponible */
+}
 
 /* Globales */
 .contenedor{
@@ -703,11 +706,7 @@ ul li {
   width: 100%;
   height: 25rem;
 }
-.imagen{
-  position: relative;
-  max-height: 25rem;
-  min-height: 100%;
-}
+
 .overlay{
   position: absolute;
   width: 100%;
@@ -944,12 +943,20 @@ footer {
 
 .contenedor-footer__catalogo {
   display: flex;
-  margin-top: 3rem;
+  position: absolute;
+  margin-top: 4rem;
   background-color: #005591;
   align-items: flex-end;
   height: 12rem;
+  width: 100%;
+  
 }
 
+footer {
+  width: 100%; /* Asegura que el footer ocupe toda la anchura */
+  position: relative; /* Relativo para que otros estilos de posicionamiento funcionen correctamente */
+  margin-top: auto; /* Asegura que el footer siempre esté al final */
+}
 .contenedor-footer__catalogo-forma-de-pago {
   display: flex;
   width: 100%;
@@ -1009,6 +1016,8 @@ footer {
 .producto__info-producto{
   grid-area: produtos-info;
   height:auto;
+  max-height: 12rem;
+  min-height: 12rem;
 }
 .imagen__producto{
   padding-bottom: 2rem;
@@ -1263,3 +1272,64 @@ footer {
   padding: 1rem;
   margin-top: auto;
 }
+
+.otros-productos {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.titulo-otros-productos {
+  color: #005591;
+  font-size: 2rem;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crea exactamente 4 columnas */
+  gap: 1rem; /* Espacio entre los productos */
+  margin-bottom: 2rem; /* Espacio adicional en la parte inferior, si es necesario */
+  
+}
+
+.producto {
+  border: 1px solid #ccc;
+  color: #005591;
+  font-size: 1.2rem;
+  background-color: #f9f9f9; /* Fondo de cada producto */
+}
+
+.producto img {
+  width: 100%;
+  height: auto; /* Asegúrate de que las imágenes no se estiren */
+  font-size: 1rem;
+}
+
+.producto h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.producto p {
+  color: #333;
+}
+
+.nombre-producto__catalogo {
+  font-size: 1.2rem;
+  color: #005591;
+}
+.contenedor__producto-info {
+  margin: 4rem auto; /* Reduce el margen superior aquí si es necesario */
+  /* Resto del CSS */
+}
+
+.otros-productos {
+  margin-top: 0rem; /* Reduce el margen superior aquí si es necesario */
+  /* Resto del CSS */
+}
+
+.grid-productos {
+  /* Resto del CSS */
+  margin-bottom: 0rem; /* Ajusta o elimina este margen si no es necesario */
+}
+
