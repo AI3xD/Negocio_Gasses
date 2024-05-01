@@ -1293,11 +1293,19 @@ footer {
 }
 
 .producto {
-  border: 1px solid #ccc;
-  color: #005591;
-  font-size: 1.2rem;
-  background-color: #f9f9f9; /* Fondo de cada producto */
+  background-color: #F1F6F9;
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
 }
+.producto:hover{
+  transform: translateY(-5px); /* This lifts the product box slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* This enhances the shadow on hover */
+}
+
 
 .producto img {
   width: 100%;

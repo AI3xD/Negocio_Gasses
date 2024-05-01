@@ -11,7 +11,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Conexión fallida: " . $conn->connect_error);
 }
+session_start(); // Inicia una nueva sesión o reanuda la existente
 
+// Comprobar si el usuario está logueado. Esto presupone que `$_SESSION['loggedin']` se establece a true cuando el usuario inicia sesión exitosamente.
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php'); // Redirigir al usuario al login
+    exit; // No ejecutar el código siguiente
+}
 // Paso 2: Consulta para obtener solo productos de la categoría 'equipos'
 $sql = "SELECT codigo, nombre, precio_venta, imagen_producto FROM productos WHERE categoria = 'equipos'";
 $result = $conn->query($sql);

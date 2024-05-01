@@ -28,7 +28,7 @@ async function login() {
         showConfirmButton: !1,
         customClass: { popup: "swal" },
         didClose: () => {
-          window.location.href = "catalogo.php";
+          window.location.href = "http://localhost/API/LinksVistas.php";
         },
       })
     : Swal.fire({

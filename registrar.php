@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,41 +16,42 @@
 
 <body class="fondo">
   <header>
-
-    <div action="">
+    <form id='form_register'onsubmit="modalLoading_register(event)">
       <div class="wrapper fadeInDown">
         <div id="formContent">
-
-          <h2 class="active"> Iniciar </h2>
-          <a href="registrar.php">
-            <h2 class="inactive underlineHover">Registrarse </h2>
+          <!-- Tabs Titles -->
+          <a href="login.php">
+            <h2 class="inactive inactive underlineHover"> Iniciar </h2>
           </a>
+          <h2 class=" active ">Registrarse </h2>
 
-
+          <!-- Icon -->
           <div class="fadeIn first">
             <a href="index.html">
               <img src="img/logoLinde.png" id="icon" alt="User Icon" />
             </a>
           </div>
 
-          <form onsubmit="modalLoading_login(event)">
-            <input type="text" id="usuario" class="fadeIn second" name="login" placeholder="Usuario">
-            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
-            <input type="submit" class="fadeIn fourth" value="Entrar">
-          </form>
+          <!-- Login Form -->
+          <div>
+            <input required type="text" id="usuario" name="login2" placeholder="Usuario">
+            <input required type="password" id="password" name="login3" placeholder="Contraseña">
+            <input required type="password" id="password_confirm" name="login" placeholder="Confirmar Contraseña">
+            <input type="submit" value="Registrar">
+          </div>
 
-
+          <!-- Remind Passowrd -->
           <div id="formFooter">
-            <a class="underlineHover" href="#">¿Olvidaste contraseña?</a>
+            <a class="underlineHover" href="#">Forgot Password?</a>
           </div>
 
         </div>
       </div>
-    </div>
-
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/login.js"></script>
+    <script src="js/registro/registro.js"></script>
 
+   
 </body>
 
 </html>
