@@ -41,7 +41,7 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
   <header>
     <div class="nav-catalogo">
       <div class="logo">
-        <a class="logo-selector" href="index.html">
+        <a class="logo-selector" href="index.php">
           <img class="logo2" src="img/logo-texto-derecha-removebg-preview.png" alt="" />
         </a>
       </div>

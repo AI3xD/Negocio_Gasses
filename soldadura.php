@@ -36,7 +36,7 @@ $result = $conn->query($sql);
     <div class="nav-catalogo">
 
       <div class="logo">
-        <a class="logo-selector" href="index.html">
+        <a class="logo-selector" href="index.php">
           <img class="logo2" src="img/logoLinde.png" alt="" />
         </a>
       </div>

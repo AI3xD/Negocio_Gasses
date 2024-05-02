@@ -44,7 +44,7 @@ $result = $conn->query($sql);
     <div class="nav-catalogo">
 
       <div class="logo">
-        <a class="logo-selector" href="index.html">
+        <a class="logo-selector" href="index.php">
           <img class="logo2" src="img/logoLinde.png" alt="" />
         </a>
       </div>
@@ -72,7 +72,7 @@ $result = $conn->query($sql);
           </svg>
         </button>
         <a href="">Ver más</a>
-        <a href="gases.html">Gases</a>
+        <a href="gases.php">Gases</a>
         <a href="soldadura.php">Soldaduras</a>
         <a href="Seguridad.php">Equipos de seguridad</a>
         <a class="active" href="">Equipos</a>
