@@ -23,10 +23,10 @@
                 // Condición para verificar si el usuario está logueado
                 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                     // Botón de cerrar sesión
-                    echo '  <a class="texto-iniciar animacion" href="api/logout.php">Cerrar Sesion</a>';
+                    echo '  <a class="texto-iniciar animacion" href="api/logout.php">Cerrar sesión</a>';
                 } else {
                     // Botón de iniciar sesión
-                    echo '  <a class="texto-iniciar animacion" href="login.php">Iniciar Sesion</a>';
+                    echo '  <a class="texto-iniciar animacion" href="login.php">Iniciar sesión</a>';
                 }
                 ?>
 

@@ -34,6 +34,7 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
   <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -110,12 +111,12 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
             ?></label>
             <input type="number" id="cantidad" name="cantidad" class="input-number" min="1" max="50" step="1"
               value="1" />
-
+          
 
           </div>
         </div>
 
-        <a href="#" class="btn__agregar-producto">Agregar al carrito</a>
+       <a href="#" id="btnAgregarCarrito" class="btn__agregar-producto" data-codigo="<?php echo $row['codigo']; ?>">Agregar al carrito</a>
       </div>
 
     </div>
@@ -189,7 +190,8 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
       </div>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/carrito.js"></script>
   <script src="js/botones.js"></script>
 </body>
 
