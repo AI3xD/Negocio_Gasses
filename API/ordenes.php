@@ -44,4 +44,7 @@ try {
     echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
 }
 $conn->autocommit(TRUE);  // Termina la transacción
+
+// Cerrar la conexión a la base de datos
+// The war is over
 ?>
