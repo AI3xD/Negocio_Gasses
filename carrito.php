@@ -93,6 +93,7 @@
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
   <script src="js/botones.js"></script>
   <script src="js/ordenes.js"></script>
+  <script src="js/eliminarArticulos.js"></script>
   <script src="js/carrito.js"></script>
 
 </body>

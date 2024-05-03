@@ -20,31 +20,50 @@ $(document).ready(function() {
 
       // Llamada AJAX al servidor para agregar al carrito
       $.ajax({
-          url: 'api/agregar_carrito.php',
-          type: 'POST',
-          data: { codigo: codigoProducto },
-          dataType: 'json', // Espera una respuesta en formato JSON
-          success: function(response) {
-              if(response.status === 'success') {
-                  // Actualiza el carrito
-                  agregarProductoAlCarrito(codigoProducto);
-                  // Actualiza la interfaz del usuario
-                  // ...
-                  Swal.fire('¡Agregado!', response.message, 'success');
-              } else {
-                  Swal.fire('Error', response.message, 'error');
-              }
-          },
-          error: function() {
-              Swal.fire('Error', 'Hubo un problema con la petición al servidor.', 'error');
-          }
-      });
-  });
-
-  // Cargar carrito de localStorage cuando la página se carga
-  cargarCarrito();
-});
-
+        url: 'api/agregar_carrito.php',
+        type: 'POST',
+        data: { codigo: codigoProducto },
+        dataType: 'json', // Espera una respuesta en formato JSON
+        success: function(response) {
+            if(response.status === 'success') {
+                // Actualiza el carrito
+                agregarProductoAlCarrito(codigoProducto);
+                // Actualiza la interfaz del usuario
+                // ...
+                Swal.fire({
+                    title: '¡Agregado!',
+                    text: response.message,
+                    icon: 'success',
+                    showConfirmButton: false, // No mostrar el botón de confirmación
+                    timer: 1500, // El timer para auto-cerrar la alerta después de 1.5 segundos
+                    timerProgressBar: true // Muestra una barra de progreso que indica el tiempo restante
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: response.message,
+                    icon: 'error',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    timerProgressBar: true
+                });
+            }
+        },
+        error: function() {
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema con la petición al servidor.',
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+            });
+        }
+    });
+    
+    // Cargar carrito de localStorage cuando la página se carga
+    cargarCarrito();
+    });
 // Objeto carrito
 let carrito = {
   total: 0,
@@ -108,4 +127,4 @@ function cargarCarrito() {
   
 }
 
-
+})
