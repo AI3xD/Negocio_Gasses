@@ -12,7 +12,7 @@ $row = mysqli_fetch_array($consulta);
 $categoria_actual = $row['categoria'];
 
 // Consulta para obtener otros 4 productos de la misma categoría, excluyendo el actual
-$query_relacionados = "SELECT * FROM productos WHERE categoria='$categoria_actual' AND codigo != '$id' LIMIT 4";
+$query_relacionados = "SELECT * FROM productos WHERE categoria='$categoria_actual' AND codigo != '$id' LIMIT 6";
 $consulta_relacionados = mysqli_query($conn, $query_relacionados);
 $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC);
 ?>
@@ -126,7 +126,7 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
         <?php foreach ($productos_relacionados as $producto) { ?>
           <div class="producto">
             <a href="producto.php?id=<?php echo htmlspecialchars($producto['codigo']); ?>">
-              <img src="img/<?php echo htmlspecialchars($producto['imagen_producto']); ?>"
+              <img  class="imagen-producto"src="img/<?php echo htmlspecialchars($producto['imagen_producto']); ?>"
                 alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
             </a>
             <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>

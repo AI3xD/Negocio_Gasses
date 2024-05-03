@@ -1027,8 +1027,8 @@ footer {
 }
 @media (min-width: 768px) {
   .imagen__producto {
-      width: 90%;  /* Agranda la imagen para pantallas más grandes */
-      max-width: 600px;  /* Define un límite para evitar estiramientos excesivos */
+      width: 72%;  /* Agranda la imagen para pantallas más grandes */
+      max-width: 72%;
   }
 }
 .contenedor__info-titulo{
@@ -1286,7 +1286,7 @@ footer {
 
 .grid-productos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Crea exactamente 4 columnas */
+  grid-template-columns: repeat(6, 1fr); /* Crea exactamente 4 columnas */
   gap: 1rem; /* Espacio entre los productos */
   margin-bottom: 2rem; /* Espacio adicional en la parte inferior, si es necesario */
   
@@ -1341,3 +1341,10 @@ footer {
   margin-bottom: 0rem; /* Ajusta o elimina este margen si no es necesario */
 }
 
+
+.imagen-producto{
+  padding-bottom: 2rem;
+  image-rendering: crisp-edges;
+  width: 20rem;
+  height: 20rem;
+}
