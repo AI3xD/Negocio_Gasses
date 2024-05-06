@@ -33,6 +33,7 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet" />
+    <link rel="icon" href="img/Linde-Logo.png">
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
