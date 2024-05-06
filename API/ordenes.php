@@ -27,7 +27,19 @@ try {
         $codigo_producto = $item['codigo'];
         $cantidad = $item['cantidad'];
         $total = $item['precio_venta'];
+
+        // Verificar la disponibilidad del producto antes de procesar la compra
+        $stmt = $conn->prepare("SELECT cantidad_disponible FROM productos WHERE codigo = ?");
+        $stmt->bind_param("s", $codigo_producto);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
         
+        if ($row['cantidad_disponible'] < $cantidad) {
+            throw new Exception('No hay suficiente stock para el producto con código ' . $codigo_producto);
+        }
+        $stmt->close();
+
         // Inserta la orden
         $stmt = $conn->prepare("INSERT INTO ordenes (codigo_producto, cantidad, total, fecha, id_usuario) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("siisi", $codigo_producto, $cantidad, $total, $fecha, $usuario_id);
