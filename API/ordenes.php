@@ -29,14 +29,15 @@ try {
         $total = $item['precio_venta'];
 
         // Verificar la disponibilidad del producto antes de procesar la compra
-        $stmt = $conn->prepare("SELECT cantidad_disponible FROM productos WHERE codigo = ?");
+        $stmt = $conn->prepare("SELECT cantidad_disponible,nombre from ordenes inner join productos on ordenes.codigo_producto=productos.codigo where productos.codigo= ?");
         $stmt->bind_param("s", $codigo_producto);
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
         
         if ($row['cantidad_disponible'] < $cantidad) {
-            throw new Exception('No hay suficiente stock para el producto con código ' . $codigo_producto);
+            $nombre=$row['nombre'];
+            throw new Exception("No hay suficiente stock para el producto con código ".$codigo_producto." ".$nombre);
         }
         $stmt->close();
 
