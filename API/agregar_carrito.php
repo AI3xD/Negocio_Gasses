@@ -37,7 +37,6 @@ if (isset($_POST['codigo']) && !empty($_POST['codigo'])) {
         $productoEncontradoEnCarrito = false;
         foreach ($_SESSION['carrito'] as &$producto) {
             if ($producto['codigo'] === $codigo) {
-                // Si el producto ya está en el carrito, aumenta la cantidad
                 $producto['cantidad']++;
                 $producto['precio_venta'] = $row['precio_venta'] * $producto['cantidad']; // Totaliza el precio_venta actual
                 $productoEncontradoEnCarrito = true;

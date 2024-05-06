@@ -17,7 +17,7 @@ if (!isset($_SESSION['carrito']) || count($_SESSION['carrito']) == 0) {
     exit;
 }
 
-$usuario_id = $_SESSION['id'];  // Asumiendo que el ID del usuario está almacenado en la sesión
+$usuario_id = $_SESSION['id'];
 $fecha = date('Y-m-d');
 
 $conn->autocommit(FALSE);  // Inicia una transacción
@@ -25,13 +25,22 @@ $conn->autocommit(FALSE);  // Inicia una transacción
 try {
     foreach ($_SESSION['carrito'] as $item) {
         $codigo_producto = $item['codigo'];
-        $cantidad = $item['cantidad'];  // Cambiar si manejas cantidad en el carrito
-        $total = $item['precio_venta'];  // Asumiendo que cada producto tiene su precio individual
-
+        $cantidad = $item['cantidad'];
+        $total = $item['precio_venta'];
+        
+        // Inserta la orden
         $stmt = $conn->prepare("INSERT INTO ordenes (codigo_producto, cantidad, total, fecha, id_usuario) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("siisi", $codigo_producto, $cantidad, $total, $fecha, $usuario_id);
         if (!$stmt->execute()) {
             throw new Exception('Error al insertar la orden: ' . $stmt->error);
+        }
+        $stmt->close();
+
+        // Actualiza la cantidad disponible en la tabla de productos
+        $stmt = $conn->prepare("UPDATE productos SET cantidad_disponible = cantidad_disponible - ? WHERE codigo = ?");
+        $stmt->bind_param("is", $cantidad, $codigo_producto);
+        if (!$stmt->execute()) {
+            throw new Exception('Error al actualizar el inventario: ' . $stmt->error);
         }
         $stmt->close();
     }
@@ -46,5 +55,5 @@ try {
 $conn->autocommit(TRUE);  // Termina la transacción
 
 // Cerrar la conexión a la base de datos
-// The war is over
+$conn->close();
 ?>
