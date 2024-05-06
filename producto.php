@@ -117,7 +117,12 @@ $productos_relacionados = mysqli_fetch_all($consulta_relacionados, MYSQLI_ASSOC)
           </div>
         </div>
 
-       <a href="#" id="btnAgregarCarrito" class="btn__agregar-producto" data-codigo="<?php echo $row['codigo']; ?>">Agregar al carrito</a>
+        <?php if ($row['cantidad_disponible'] > 0): ?>
+          
+            <a href="#" id="btnAgregarCarrito" class="btn__agregar-producto" data-codigo="<?php echo $row['codigo']; ?>">Agregar al carrito</a>
+        <?php else: ?>
+            <p class="texto__no-disponible">No hay unidades disponibles.</p>
+        <?php endif; ?>
       </div>
 
     </div>

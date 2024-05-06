@@ -1348,3 +1348,10 @@ footer {
   width: 20rem;
   height: 20rem;
 }
+
+.texto__no-disponible{
+  font-family: var(--fuenteHeading);
+  color: #3c3c3c;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
